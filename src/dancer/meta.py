@@ -2,6 +2,19 @@ from dataclasses import dataclass
 
 
 @dataclass
+class ColumnMeta:
+    field: str
+    type: str
+    collation: str
+    null: str
+    key: str
+    default: str
+    extra: str
+    privileges: str
+    comment: str
+
+
+@dataclass
 class IndexMeta:
     table_name: str
     non_unique: bool
@@ -16,3 +29,11 @@ class IndexMeta:
     index_type: str
     comment: str
     index_comment: str
+
+
+@dataclass
+class ReferenceMeta:
+    table_name: str
+    column_name: str
+    referenced_table_name: str
+    referenced_column_name: str
